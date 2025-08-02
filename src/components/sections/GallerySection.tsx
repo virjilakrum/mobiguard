@@ -8,49 +8,49 @@ import { cn } from '@/lib/utils';
 const galleryImages = [
   {
     id: 1,
-    src: "/src/images/WhatsApp Image 2025-08-02 at 12.30.15.jpeg",
+    src: "/images/WhatsApp Image 2025-08-02 at 12.30.15.jpeg",
     alt: "MOBIGUARD koruma filmi uygulaması",
     category: "Profesyonel Uygulama"
   },
   {
     id: 2,
-    src: "/src/images/WhatsApp Image 2025-08-02 at 12.30.16 (1).jpeg",
+    src: "/images/WhatsApp Image 2025-08-02 at 12.30.16 (1).jpeg",
     alt: "MOBIGUARD koruma filmi detayı",
     category: "Kalite Kontrol"
   },
   {
     id: 3,
-    src: "/src/images/WhatsApp Image 2025-08-02 at 12.30.16.jpeg",
+    src: "/images/WhatsApp Image 2025-08-02 at 12.30.16.jpeg",
     alt: "MOBIGUARD koruma filmi işçiliği",
     category: "Uzman Uygulama"
   },
   {
     id: 4,
-    src: "/src/images/WhatsApp Image 2025-08-02 at 12.31.35.jpeg",
+    src: "/images/WhatsApp Image 2025-08-02 at 12.31.35.jpeg",
     alt: "MOBIGUARD koruma filmi sonucu",
     category: "Tamamlanmış Proje"
   },
   {
     id: 5,
-    src: "/src/images/WhatsApp Image 2025-08-02 at 12.31.36 (1).jpeg",
+    src: "/images/WhatsApp Image 2025-08-02 at 12.31.36 (1).jpeg",
     alt: "MOBIGUARD koruma filmi kalitesi",
     category: "Premium Kalite"
   },
   {
     id: 6,
-    src: "/src/images/WhatsApp Image 2025-08-02 at 12.31.36 (2).jpeg",
+    src: "/images/WhatsApp Image 2025-08-02 at 12.31.36 (2).jpeg",
     alt: "MOBIGUARD koruma filmi mükemmelliği",
     category: "Mükemmel Finish"
   },
   {
     id: 7,
-    src: "/src/images/WhatsApp Image 2025-08-02 at 12.31.36 (3).jpeg",
+    src: "/images/WhatsApp Image 2025-08-02 at 12.31.36 (3).jpeg",
     alt: "MOBIGUARD koruma filmi detay çalışması",
     category: "Detay İşçiliği"
   },
   {
     id: 8,
-    src: "/src/images/WhatsApp Image 2025-08-02 at 12.31.36.jpeg",
+    src: "/images/WhatsApp Image 2025-08-02 at 12.31.36.jpeg",
     alt: "MOBIGUARD koruma filmi profesyonel sonuç",
     category: "Profesyonel Sonuç"
   }

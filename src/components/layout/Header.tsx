@@ -90,7 +90,7 @@ export function Header() {
           <div className="flex items-center space-x-3 min-w-0 cursor-pointer" onClick={() => handleNavClick('#hero')}>
             <div className="flex items-center space-x-2">
               <img
-                src="/src/images/mobiguard_logo.png"
+                src="/images/mobiguard_logo.png"
                 alt="MOBIGUARD Logo"
                 className="h-48 w-48 flex-shrink-0 object-contain"
               />

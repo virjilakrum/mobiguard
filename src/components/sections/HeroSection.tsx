@@ -102,7 +102,7 @@ export function HeroSection() {
             <div className="absolute bottom-6 right-6 z-20">
               <div className="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/20 shadow-lg">
                 <img
-                  src="/src/images/mobiguard_logo.png"
+                  src="/images/mobiguard_logo.png"
                   alt="MOBIGUARD Logo"
                   className="h-20 w-20 object-contain"
                 />

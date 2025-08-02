@@ -24,55 +24,55 @@ import { cn } from '@/lib/utils';
 const slideImages = [
   {
     id: 1,
-    src: "/src/images/mobiguard 9.jpg",
+    src: "/images/mobiguard 9.jpg",
     title: "Profesyonel Koruma Filmi Uygulaması",
     description: "Uzman ekibimiz tarafından titizlikle uygulanan koruma filmleri, yüzeylerinizi mükemmel şekilde korur."
   },
   {
     id: 2,
-    src: "/src/images/mobiguard mokap.jpg",
+    src: "/images/mobiguard mokap.jpg",
     title: "MOBIGUARD Kalite Standardı",
     description: "TPH, TPU ve 3M PPF teknolojileriyle üretilen filmlerimiz, en yüksek kalite standartlarını karşılar."
   },
   {
     id: 3,
-    src: "/src/images/mobiguard post 2.jpg",
+    src: "/images/mobiguard post 2.jpg",
     title: "Detaylı İşçilik",
     description: "Her detayın özenle işlendiği uygulama sürecimizde, mükemmel sonuçlar elde ediyoruz."
   },
   {
     id: 4,
-    src: "/src/images/mobiguard post 3.jpg",
+    src: "/images/mobiguard post 3.jpg",
     title: "Teknoloji ve Deneyim",
     description: "Modern teknoloji ile birleşen deneyimimiz, size en iyi koruma çözümlerini sunar."
   },
   {
     id: 5,
-    src: "/src/images/mobiguard post 4.jpg",
+    src: "/images/mobiguard post 4.jpg",
     title: "Dayanıklı Koruma",
     description: "Uzun ömürlü koruma sağlayan filmlerimiz, yatırımınızı yıllarca güvende tutar."
   },
   {
     id: 6,
-    src: "/src/images/mobiguard post 5.jpg",
+    src: "/images/mobiguard post 5.jpg",
     title: "Estetik ve Fonksiyonellik",
     description: "Görünümü bozmadan maksimum koruma sağlayan şeffaf filmlerimiz."
   },
   {
     id: 7,
-    src: "/src/images/mobiguard post 6.jpg",
+    src: "/images/mobiguard post 6.jpg",
     title: "Çevre Dostu Çözümler",
     description: "Çevre dostu malzemelerle üretilen filmlerimiz, sürdürülebilir koruma sağlar."
   },
   {
     id: 8,
-    src: "/src/images/mobiguard post 7.jpg",
+    src: "/images/mobiguard post 7.jpg",
     title: "Özel Tasarım Uygulamaları",
     description: "Her projeye özel tasarlanan koruma çözümleri ile benzersiz sonuçlar."
   },
   {
     id: 9,
-    src: "/src/images/mobiguard post 8.jpg",
+    src: "/images/mobiguard post 8.jpg",
     title: "Mükemmel Finish",
     description: "Profesyonel finish ile tamamlanan projelerimiz, beklentilerinizi aşar."
   }

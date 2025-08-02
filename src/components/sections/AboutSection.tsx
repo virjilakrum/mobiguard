@@ -114,7 +114,7 @@ export function AboutSection() {
           </Badge>
           <div className="flex items-center justify-center space-x-4">
             <img
-              src="/src/images/mobiguard_logo.png"
+              src="/images/mobiguard_logo.png"
               alt="MOBIGUARD Logo"
               className="h-64 w-64 object-contain animate-pulse"
             />
@@ -170,7 +170,7 @@ export function AboutSection() {
 
           <div className="relative">
             <img
-              src="/src/images/Mobiguard PP.jpg"
+              src="/images/Mobiguard PP.jpg"
               alt="MOBIGUARD Koruma Filmi Uygulaması"
               className="rounded-lg shadow-2xl w-full h-[400px] object-cover"
             />

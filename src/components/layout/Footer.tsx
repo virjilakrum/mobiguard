@@ -10,7 +10,7 @@ export function Footer() {
           <div className="space-y-4">
             <div className="flex items-center">
               <img
-                src="/src/images/mobiguard_logo.png"
+                src="/images/mobiguard_logo.png"
                 alt="MOBIGUARD Logo"
                 className="h-48 w-48 object-contain"
               />
