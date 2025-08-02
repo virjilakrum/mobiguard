@@ -110,7 +110,7 @@ export function GallerySection() {
         open={selectedImage !== null} 
         onOpenChange={(open) => !open && setSelectedImage(null)}
       >
-        <DialogContent className="sm:max-w-4xl p-0 bg-background/90 backdrop-blur-lg border border-white/10 overflow-hidden" hideCloseButton>
+        <DialogContent className="sm:max-w-4xl p-0 bg-background/90 backdrop-blur-lg border border-white/10 overflow-hidden">
           {selectedImage !== null && (
             <>
               <DialogHeader className="sr-only">

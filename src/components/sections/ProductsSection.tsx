@@ -216,7 +216,7 @@ export function ProductsSection() {
       
       {/* Product Details Dialog */}
       <Dialog open={!!selectedProduct} onOpenChange={(open) => !open && setSelectedProduct(null)}>
-        <DialogContent className="sm:max-w-3xl bg-background/95 backdrop-blur-lg border border-white/10" hideCloseButton>
+        <DialogContent className="sm:max-w-3xl bg-background/95 backdrop-blur-lg border border-white/10">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold flex items-center">
               {selectedProduct?.name || 'Product Details'}

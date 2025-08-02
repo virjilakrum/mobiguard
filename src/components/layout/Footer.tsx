@@ -1,7 +1,5 @@
-import { Layers, Instagram, Twitter, Facebook, Mail, Phone, MapPin } from 'lucide-react';
+import { Instagram, Twitter, Mail, Phone, MapPin } from 'lucide-react';
 import { Music2 } from 'lucide-react'; // TikTok icon
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
 
 export function Footer() {
