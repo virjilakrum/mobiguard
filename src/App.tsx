@@ -7,18 +7,20 @@ import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
 import { ContactSection } from '@/components/sections/ContactSection';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { AboutSection } from '@/components/sections/AboutSection';
+import { CustomCursor } from '@/components/CustomCursor';
 
 function App() {
   return (
     <ThemeProvider>
       <div className="min-h-screen bg-background text-foreground font-sans">
+        <CustomCursor />
         <Header />
         <main>
           <HeroSection />
           <ProductsSection />
           <GallerySection />
           <AboutSection />
-          <TestimonialsSection />
+          {/* <TestimonialsSection /> */}
           <ContactSection />
         </main>
         <Footer />
