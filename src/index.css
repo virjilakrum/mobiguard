@@ -254,6 +254,38 @@
   will-change: transform, opacity;
 }
 
+/* Hide Spline watermark - Enhanced */
+canvas + div[style*="position: absolute"][style*="bottom"][style*="right"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Alternative method to hide Spline branding */
+div[style*="position: absolute"][style*="bottom: 16px"][style*="right: 16px"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Hide Spline watermark by common positioning */
+div[style*="position: absolute"][style*="bottom"][style*="right"][style*="z-index"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Hide any small positioned elements in bottom-right */
+div[style*="position: absolute"][style*="bottom"][style*="right"]:not([class]) {
+  display: none !important;
+}
+
+/* Target Spline logo/branding specifically */
+a[href*="spline"],
+a[href*="Spline"],
+div[style*="font-family"][style*="bottom"][style*="right"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
 /* Thin stroke effect for all components */
 .btn,
 .card,

@@ -95,6 +95,20 @@ export function HeroSection() {
               />
             </div>
 
+            {/* Hide "Build with Spline" watermark - Larger coverage */}
+            <div className="absolute bottom-0 right-0 w-48 h-20 bg-gradient-to-tl from-background/95 via-background/60 to-transparent z-10 rounded-br-2xl" />
+
+            {/* MOBIGUARD Logo Overlay - Much Bigger Logo */}
+            <div className="absolute bottom-6 right-6 z-20">
+              <div className="bg-white/10 backdrop-blur-md p-6 rounded-xl border border-white/20 shadow-lg">
+                <img
+                  src="/src/images/mobiguard_logo.png"
+                  alt="MOBIGUARD Logo"
+                  className="h-20 w-20 object-contain"
+                />
+              </div>
+            </div>
+
             {/* Decorative overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent pointer-events-none rounded-2xl" />
           </div>
