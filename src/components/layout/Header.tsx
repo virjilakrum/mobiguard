@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, X } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navItems = [
@@ -133,23 +133,15 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[85%] sm:w-[400px] bg-background/95 backdrop-blur-lg border-l border-white/10">
               <div className="flex flex-col h-full">
-                <div className="flex items-center justify-between mb-8 pb-4 border-b border-white/10 cursor-pointer" onClick={() => handleNavClick('#hero')}>
-                  <div className="flex items-center space-x-2">
-                    <img 
-                      src="/assets/mobiguard_logo.png" 
-                      alt="MOBIGUARD Logo" 
-                      className="h-6 w-6 object-contain"
+                <div className="flex items-center mb-8 pb-4 border-b border-white/10 cursor-pointer" onClick={() => handleNavClick('#hero')}>
+                  <div className="flex items-center space-x-3">
+                    <img
+                      src="/images/mobiguard_logo.png"
+                      alt="MOBIGUARD Logo"
+                      className="h-10 w-10 object-contain"
                     />
+                    <span className="text-xl font-bold tracking-tight">MOBIGUARD</span>
                   </div>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    onClick={() => setIsMenuOpen(false)}
-                    className="h-8 w-8"
-                  >
-                    <X className="h-4 w-4" />
-                    <span className="sr-only">Menüyü kapat</span>
-                  </Button>
                 </div>
                 
                 <nav className="flex flex-col space-y-1 flex-1">
