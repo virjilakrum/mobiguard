@@ -33,6 +33,7 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { cn } from '@/lib/utils';
+import { useState } from 'react';
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -90,6 +91,9 @@ const quoteSchema = z.object({
 });
 
 export function ContactSection() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
   const contactForm = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -119,15 +123,61 @@ export function ContactSection() {
     },
   });
   
-  function onContactSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    // Implementation would go here
+  async function onContactSubmit(values: z.infer<typeof formSchema>) {
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      // EmailJS ile e-posta gönderimi
+      const templateParams = {
+        to_email: 'info@mobiguards.com',
+        from_name: values.name,
+        from_email: values.email,
+        subject: values.subject,
+        message: values.message,
+        reply_to: values.email,
+      };
+
+      // Geçici olarak mailto kullanacağız (EmailJS setup gerektiriyor)
+      const subject = encodeURIComponent(`MOBIGUARD İletişim: ${values.subject}`);
+      const body = encodeURIComponent(`
+İsim: ${values.name}
+E-posta: ${values.email}
+Konu: ${values.subject}
+
+Mesaj:
+${values.message}
+
+---
+Bu mesaj MOBIGUARD web sitesi iletişim formundan gönderilmiştir.
+      `);
+
+      // Mailto link oluştur
+      const mailtoLink = `mailto:info@mobiguards.com?subject=${subject}&body=${body}`;
+      window.open(mailtoLink, '_blank');
+
+      setSubmitStatus('success');
+      contactForm.reset();
+
+      console.log('Form verileri:', values);
+      console.log('E-posta gönderildi:', templateParams);
+
+    } catch (error) {
+      console.error('E-posta gönderme hatası:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   }
   
-  function onQuoteSubmit(values: z.infer<typeof quoteSchema>) {
-    // Create email content
-    const subject = `Koruma Filmi Teklif Talebi - ${values.company}`;
-    const body = `
+  async function onQuoteSubmit(values: z.infer<typeof quoteSchema>) {
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      // Create email content
+      const subject = `MOBIGUARD Teklif Talebi - ${values.company}`;
+      const body = `
 Koruma Filmi Teklif Talebi
 
 Şirket Bilgileri:
@@ -149,14 +199,27 @@ Proje Detayları:
 Proje Açıklaması:
 ${values.project}
 
-Bu talep ${new Date().toLocaleDateString('tr-TR')} tarihinde gönderilmiştir.
-    `.trim();
+---
+Bu talep ${new Date().toLocaleDateString('tr-TR')} tarihinde MOBIGUARD web sitesinden gönderilmiştir.
+      `.trim();
 
-    // Create mailto link
-    const mailtoLink = `mailto:info@mobiguards.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
-    // Open email client
-    window.location.href = mailtoLink;
+      // Create mailto link
+      const mailtoLink = `mailto:info@mobiguards.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      // Open email client
+      window.open(mailtoLink, '_blank');
+
+      setSubmitStatus('success');
+      quoteForm.reset();
+
+      console.log('Teklif formu verileri:', values);
+
+    } catch (error) {
+      console.error('Teklif e-postası gönderme hatası:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   }
   
   return (
@@ -270,9 +333,26 @@ Bu talep ${new Date().toLocaleDateString('tr-TR')} tarihinde gönderilmiştir.
                         )}
                       />
                       
-                      <Button type="submit" variant="premium" className="w-full">
-                        Mesaj Gönder
+                      <Button
+                        type="submit"
+                        variant="premium"
+                        className="w-full"
+                        disabled={isSubmitting}
+                      >
+                        {isSubmitting ? 'Gönderiliyor...' : 'Mesaj Gönder'}
                       </Button>
+
+                      {submitStatus === 'success' && (
+                        <div className="text-green-600 text-sm text-center">
+                          E-posta istemciniz açıldı. Mesajınızı göndermek için e-posta istemcinizi kullanın.
+                        </div>
+                      )}
+
+                      {submitStatus === 'error' && (
+                        <div className="text-red-600 text-sm text-center">
+                          Bir hata oluştu. Lütfen tekrar deneyin veya doğrudan info@mobiguards.com adresine e-posta gönderin.
+                        </div>
+                      )}
                     </form>
                   </Form>
                 </TabsContent>
@@ -559,9 +639,27 @@ Bu talep ${new Date().toLocaleDateString('tr-TR')} tarihinde gönderilmiştir.
                         )}
                       />
                       
-                      <Button type="submit" variant="premium" className="w-full" size="lg">
-                        Teklif İste
+                      <Button
+                        type="submit"
+                        variant="premium"
+                        className="w-full"
+                        size="lg"
+                        disabled={isSubmitting}
+                      >
+                        {isSubmitting ? 'Gönderiliyor...' : 'Teklif İste'}
                       </Button>
+
+                      {submitStatus === 'success' && (
+                        <div className="text-green-600 text-sm text-center">
+                          E-posta istemciniz açıldı. Teklif talebinizi göndermek için e-posta istemcinizi kullanın.
+                        </div>
+                      )}
+
+                      {submitStatus === 'error' && (
+                        <div className="text-red-600 text-sm text-center">
+                          Bir hata oluştu. Lütfen tekrar deneyin veya doğrudan info@mobiguards.com adresine e-posta gönderin.
+                        </div>
+                      )}
                     </form>
                   </Form>
                 </TabsContent>
