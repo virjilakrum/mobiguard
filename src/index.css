@@ -187,6 +187,16 @@
   }
 }
 
+/* Touch Action Optimization */
+html {
+  touch-action: pan-y pinch-zoom;
+}
+
+body {
+  touch-action: pan-y pinch-zoom;
+  overscroll-behavior: contain;
+}
+
 /* Custom Cursor Styles */
 * {
   cursor: none !important;
@@ -284,6 +294,33 @@ a[href*="Spline"],
 div[style*="font-family"][style*="bottom"][style*="right"] {
   display: none !important;
   visibility: hidden !important;
+}
+
+/* Spline Canvas Touch Optimization */
+canvas {
+  touch-action: pan-y pinch-zoom !important;
+  pointer-events: auto !important;
+}
+
+/* Prevent touch event conflicts */
+.spline-container,
+[data-spline] {
+  touch-action: pan-y pinch-zoom;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Spline Error Prevention */
+canvas[data-engine="spline"] {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Suppress Spline console warnings */
+.spline-runtime-error {
+  display: none !important;
 }
 
 /* Thin stroke effect for all components */

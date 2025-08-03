@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import Spline from '@splinetool/react-spline';
+import { SplineWrapper } from '@/components/SplineWrapper';
 
 export function HeroSection() {
   return (
@@ -89,9 +89,9 @@ export function HeroSection() {
           {/* Right Spline Animation */}
           <div className="relative h-[500px] lg:h-[600px] w-full">
             <div className="absolute inset-0 rounded-2xl overflow-hidden bg-gradient-to-br from-[#313a6f]/10 to-transparent backdrop-blur-sm border border-white/10">
-              <Spline
+              <SplineWrapper
                 scene="https://prod.spline.design/ygyPt6lnebhqVV2J/scene.splinecode"
-                style={{ width: '100%', height: '100%' }}
+                className="w-full h-full"
               />
             </div>
 

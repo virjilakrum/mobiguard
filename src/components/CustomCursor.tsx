@@ -84,6 +84,10 @@ export function CustomCursor() {
     document.addEventListener('mouseover', handleMouseEnter, { passive: true });
     document.addEventListener('mouseout', handleMouseLeave, { passive: true });
 
+    // Add touch event listeners with passive flag
+    document.addEventListener('touchstart', handleMouseDown, { passive: true });
+    document.addEventListener('touchend', handleMouseUp, { passive: true });
+
     // Cleanup function
     return () => {
       if (animationFrameRef.current) {
@@ -94,6 +98,8 @@ export function CustomCursor() {
       document.removeEventListener('mouseup', handleMouseUp);
       document.removeEventListener('mouseover', handleMouseEnter);
       document.removeEventListener('mouseout', handleMouseLeave);
+      document.removeEventListener('touchstart', handleMouseDown);
+      document.removeEventListener('touchend', handleMouseUp);
     };
   }, [updateCursor, handleMouseDown, handleMouseUp, handleMouseEnter, handleMouseLeave]);
 
