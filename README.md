@@ -292,7 +292,7 @@ npm run preview
 | Bilgi | Değer |
 |-------|-------|
 | **Geliştirici** | virjilakrum |
-| **Lisans** | MIT |
+| **Lisans** | Apache License |
 | **Repository** | [github.com/virjilakrum/mobiguard](https://github.com/virjilakrum/mobiguard) |
 | **Demo** | [Live Demo](https://mobiguard.vercel.app) |
 
